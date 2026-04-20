@@ -39,6 +39,10 @@ namespace AssetStudio
                     var m_Enabled = reader.ReadBoolean();
                     var m_CastShadows = reader.ReadByte();
                     var m_ReceiveShadows = reader.ReadByte();
+                    //COD
+                    var m_ReceiveNoSSShadows = reader.ReadByte();
+                    var m_DynamicShadows = reader.ReadByte();
+                    
                     if (version[0] > 2017 || (version[0] == 2017 && version[1] >= 2)) //2017.2 and up
                     {
                         var m_DynamicOccludee = reader.ReadByte();
@@ -87,11 +91,11 @@ namespace AssetStudio
             {
                 var m_LightmapTilingOffset = reader.ReadVector4();
             }
-
-            if (version[0] >= 5) //5.0 and up
-            {
-                var m_LightmapTilingOffsetDynamic = reader.ReadVector4();
-            }
+            //COD
+            //if (version[0] >= 5) //5.0 and up
+            //{
+                //var m_LightmapTilingOffsetDynamic = reader.ReadVector4();
+            ///}
 
             var m_MaterialsSize = reader.ReadInt32();
             m_Materials = new PPtr<Material>[m_MaterialsSize];
