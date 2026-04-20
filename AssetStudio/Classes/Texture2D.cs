@@ -84,6 +84,8 @@ namespace AssetStudio
             if (version[0] > 2 || (version[0] == 2 && version[1] >= 6)) //2.6.0 and up
             {
                 var m_IsReadable = reader.ReadBoolean();
+                //COD
+                var m_StreamingMipmaps = reader.ReadBoolean();
             }
             if (version[0] >= 2020) //2020.1 and up
             {
