@@ -107,6 +107,10 @@ namespace AssetStudio
                 var m_StreamingMipmaps = reader.ReadBoolean();
             }
             reader.AlignStream();
+
+            //COD
+            var m_StreamingMipmapsPriority = reader.ReadInt32();
+            var m_StreamingGroupID = reader.ReadInt32();             
             if (version[0] > 2018 || (version[0] == 2018 && version[1] >= 2)) //2018.2 and up
             {
                 var m_StreamingMipmapsPriority = reader.ReadInt32();
